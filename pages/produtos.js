@@ -15,9 +15,9 @@ export async function getStaticProps() {
 function generateProducts(products) {
   
     return products.map((product) => (
-          <li key={product.params.id}>
+          <li className="m-1" key={product.params.id}>
             <Link href={`/produto/${product.params.id}`}>
-                <a>
+                <a className="hover:no-underline">
                   <Product data={product} />
                 </a>
             </Link>
@@ -31,7 +31,7 @@ export default function Products({ allProductsData }) {
       <Head>
         <title>Produtos</title>
       </Head>
-      <ul>{generateProducts(allProductsData)}</ul>
+      <ul className="flex flex-row">{generateProducts(allProductsData)}</ul>
     </>
   );
 }
